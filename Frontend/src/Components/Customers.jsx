@@ -29,6 +29,7 @@ class CustomerList extends Component {
     }
 
     deleteCustomer = (customerId) => {
+        if (window.confirm("Delete account?")) {
         console.log(customerId)
         axios.delete(`http://127.0.0.1:5000/customers/${customerId}`)
              .then(() => {
@@ -38,6 +39,7 @@ class CustomerList extends Component {
                  console.error('Error deleting customer:', error);
                  this.setState({ error: 'Error deleting customer. Please try again.' });
              });
+        }
     }
 
     render() {

@@ -30,7 +30,7 @@ const ProductList = () => {
     }
 
     const deleteProduct = (productId) => {
-        if (window.confirm("Are you sure?")) { 
+        if (window.confirm("Delete Product?")) { 
             axios.delete(`http://127.0.0.1:5000/products/${productId}`)
             .then(() => {
                 fetchProducts();
