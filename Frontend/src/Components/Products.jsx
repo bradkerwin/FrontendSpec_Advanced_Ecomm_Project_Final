@@ -13,6 +13,7 @@ const ProductList = () => {
     
     const handleAddProductToCart = (id) => {
         dispatch(addItem(id))
+        alert("Product added to Cart.")
         console.log("Product Added to Cart.");
     }
 

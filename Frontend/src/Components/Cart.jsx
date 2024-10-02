@@ -21,15 +21,8 @@ const Cart = () => {
 
   const handleCheckout = (id) => {
     dispatch(checkout());
+    alert("Thank you for your business! Have a great day!")
   };
-
-  // const getProductName = (id) => {
-  //   const product = products.find((product) => {
-  //     return Number(id) === product.id
-  //   })
-
-  //   return product ? product.title : 'Unknown Product'
-  // }
 
   return (
     <>
