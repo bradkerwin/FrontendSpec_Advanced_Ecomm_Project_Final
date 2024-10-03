@@ -55,7 +55,7 @@ const SignIn = () => {
 
       <Form.Group className="m-3" controlId="formBasicPassword">
         <Form.Label>Password</Form.Label>
-        <Form.Control type="password" placeholder="Enter Your Phone Number" value={phone} onChange={(e) => setPhone(e.target.value)} required/>
+        <Form.Control type="password" placeholder="Enter Your Phone Number (format: 0000000000)" value={phone} onChange={(e) => setPhone(e.target.value)} required/>
       </Form.Group>
 
       <Button className="m-3" variant="primary" type="submit">Log In</Button>

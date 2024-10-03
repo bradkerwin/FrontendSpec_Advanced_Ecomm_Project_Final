@@ -21,7 +21,7 @@ function NavigationBar() {
                 <Nav className="m-auto">
                     
                     <Nav.Link as= {NavLink} to="/customers" activeclassname="active">
-                    Customers
+                    Account
                     </Nav.Link>
 
                     <Nav.Link as= {NavLink} to="/newproduct" activeclassname="active">

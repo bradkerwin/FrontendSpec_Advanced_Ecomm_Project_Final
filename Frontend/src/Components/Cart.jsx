@@ -48,7 +48,7 @@ const Cart = () => {
                   Add Quantity
                 </Button>
                 <Button variant="danger" onClick={() => dispatch(handleRemoveItem(idx))}>
-                  Remove Product From Cart
+                  Decrease Quantity
                 </Button>
               </div>
             </ListGroup.Item>

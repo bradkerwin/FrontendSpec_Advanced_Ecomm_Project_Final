@@ -103,7 +103,7 @@ class NewCustomer extends Component {
 
                     <Form.Group controlId="formGroupPhone">
                         <Form.Label>
-                            Phone
+                            Phone (format: 0000000000)
                         </Form.Label>
                         <Form.Control type="tel" name="phone" value={phone} onChange={this.handleChange} />
                         {errors.phone && <div style={{ color: 'red'}}>{errors.phone}</div>}

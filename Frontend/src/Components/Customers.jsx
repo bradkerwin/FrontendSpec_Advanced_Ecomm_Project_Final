@@ -29,8 +29,10 @@ class CustomerList extends Component {
     }
 
     deleteCustomer = (customerId) => {
-        if (window.confirm("Delete account?")) {
+        if (window.confirm("Delete your account?")) {
         console.log(customerId)
+        alert("Your account has been deleted")
+        console.log("Account Deleted");
         axios.delete(`http://127.0.0.1:5000/customers/${customerId}`)
              .then(() => {
                  this.fetchCustomers();
@@ -63,7 +65,7 @@ class CustomerList extends Component {
                                         Email: {customer.email} <br/>
                                         Phone: {customer.phone}
                                     </Card.Text>
-                                    <Button variant="danger" onClick={()=> this.deleteCustomer(customer.id)}>Remove Customer</Button>
+                                    <Button variant="danger" onClick={()=> this.deleteCustomer(customer.id)}>Delete Account</Button>
                                 </Card.Body>
                                 </Card>
                         </ListGroup.Item>
