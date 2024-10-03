@@ -37,6 +37,7 @@ const Cart = () => {
             <ListGroup.Item key={idx.product_id}>
               <div>
                 <h2>{idx.product_name}</h2>
+                <h4>Quantity: {idx.quantity}</h4>
                 <h4>${idx.price * idx.quantity}</h4>
 
                 <Button

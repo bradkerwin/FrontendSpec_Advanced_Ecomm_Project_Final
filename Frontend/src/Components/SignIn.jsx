@@ -1,7 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link, Navigate, useNavigate } from "react-router-dom";
 import { Button, Form } from "react-bootstrap";
+import { useDispatch } from "react-redux";
+import { logIn } from "../redux/userSlice";
 
 const SignIn = () => {
   const [email, setEmail] = useState("");
@@ -9,6 +11,7 @@ const SignIn = () => {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+  const dispatch = useDispatch()
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -24,7 +27,9 @@ const SignIn = () => {
       );
 
       if (customer) {
+        console.log("customer:", customer);
         sessionStorage.setItem("user", JSON.stringify(customer));
+        dispatch(logIn(customer))
 
         console.log("Logged in successfully!");
         navigate("/homepage");

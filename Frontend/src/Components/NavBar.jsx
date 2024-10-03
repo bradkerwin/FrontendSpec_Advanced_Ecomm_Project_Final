@@ -1,18 +1,21 @@
-import { NavLink, useNavigate } from 'react-router-dom';
+import { NavLink, useNavigate, Link } from 'react-router-dom';
 import { Navbar, Nav, Button } from 'react-bootstrap';
+import { useDispatch } from 'react-redux';
+import { logOut } from '../redux/userSlice';
 
 function NavigationBar() {
-
+    const dispatch = useDispatch()
     const navigate = useNavigate();
 
     const handleLogOut = () => {
         sessionStorage.removeItem("user");
+        dispatch(logOut())
         navigate("/");
     }
 
     return (
         <Navbar bg="primary" expand="md">
-            <Navbar.Brand href="/homepage">Welcome to E-Commerce</Navbar.Brand>
+            <Navbar.Brand as= {Link} to="/homepage">Welcome to E-Commerce</Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav"></Navbar.Toggle>
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="m-auto">

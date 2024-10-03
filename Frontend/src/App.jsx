@@ -1,4 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { useSelector } from 'react-redux';
 import { Route, Routes } from 'react-router-dom';
 import CustomerList from './Components/Customers';
 import NewCustomer from './Components/NewCustomer';
@@ -12,11 +13,11 @@ import Cart from './Components/Cart';
 import SignIn from './Components/SignIn';
 
 function App() {
-  const user = JSON.parse(sessionStorage.getItem('user'))
+  const user = useSelector( (state) => state.user.user)
 
   return (
     <>
-    {user && <NavigationBar/>}
+    {user ? <NavigationBar/> : ""}
     <Routes>
         <Route path='/' element={<SignIn />} />
         <Route path='/homepage' element={<HomePage /> } />
