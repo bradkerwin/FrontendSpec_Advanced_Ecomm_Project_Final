@@ -22,9 +22,11 @@ const SignIn = () => {
       const response = await axios.get("http://127.0.0.1:5000/customers");
       const customers = response.data;
 
-      const customer = customers.find(
-        (auth) => auth.email === email && auth.phone === phone
-      );
+      const customer = customers.find((auth) => {
+        console.log("auth: ", auth);
+        console.log("auth.email: ", auth.email);
+        return auth.email === email && auth.phone === phone;
+    });
 
       if (customer) {
         console.log("customer:", customer);
